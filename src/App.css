@@ -35,6 +35,12 @@
 .tycoons {
   border: 1px solid black;
   width: 50%;
+  text-align: center;
+}
+
+.header {
+  font-weight: normal;
+  font-size: 40px;
 }
 
 .upgrades {
@@ -55,6 +61,12 @@
   align-items: center;
 }
 
+.bottom-div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .ind-header {
   font-weight: normal;
   font-size: 40px;
@@ -63,5 +75,29 @@
 .ind-img {
   height: 70px;
   margin: 10px;
+}
+
+.click {
+  background-color: red;
+  color: white;
+  border-color: red;
+  width: 80px;
+  height: 35px;
+  margin-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.progress {
+  background-color: #d3d3d3;
+  height: 35px;
+  width: 80%;
+  margin-left: 10px;
+}
+
+.bar {
+  width: 0%;
+  height: 35px;
+  background-color: #04aa6d;
 }
 
