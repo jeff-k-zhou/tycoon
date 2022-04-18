@@ -1,38 +1,67 @@
-.App {
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 60px;
+}
+
+.game {
+  box-shadow: 1px 1px 5px grey;
+  width: 90%;
+}
+
+.money {
+  border: 1px solid black;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.value {
+  font-weight: normal;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+  display: flex;
+  flex-direction: row;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tycoons {
+  border: 1px solid black;
+  width: 50%;
+}
+
+.upgrades {
+  border: 1px solid black;
+  width: 100%;
+}
+
+.industry {
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.top-div {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ind-header {
+  font-weight: normal;
+  font-size: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ind-img {
+  height: 70px;
+  margin: 10px;
 }
+

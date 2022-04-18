@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { business } from "./static js/business.js"
 
 function App() {
+  const [money, setMoney] = useState(localStorage.getItem("money"))
+  if (money === null) {
+    setMoney(0)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="container">
+      <h1 class="title">Restaurant Tycoon</h1>
+      <div class="game">
+        <div class="money">
+          <h1 class="value">$ {money}</h1>
+        </div>
+        <div class="main">
+          <div class="tycoons">
+            {business.map((index) => {
+              return (
+                <div class="industry">
+                  <div class = "top-div">
+                    <img src={index.icon} class="ind-img" />
+                    <h1 class="ind-header">{index.name} - ${index.starting_income}/click</h1>
+                  </div>
+                  <div class = "bottom-div"></div>
+                </div>
+              )
+            })}
+          </div>
+          <div class="upgrades">
+            fizzbuzz
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
