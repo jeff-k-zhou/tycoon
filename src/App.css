@@ -13,6 +13,7 @@
 .game {
   box-shadow: 1px 1px 5px grey;
   width: 90%;
+  margin-bottom: 20px;
 }
 
 .money {
@@ -36,6 +37,7 @@
   border: 1px solid black;
   width: 50%;
   text-align: center;
+  height: 500px;
 }
 
 .header {
@@ -46,6 +48,9 @@
 .upgrades {
   border: 1px solid black;
   width: 100%;
+  text-align: center;
+  height: 500px;
+  overflow: auto;
 }
 
 .industry {
@@ -92,7 +97,7 @@
   background-color: #d3d3d3;
   height: 35px;
   width: 80%;
-  margin-left: 10px;
+  margin: 10px;
 }
 
 .bar {
@@ -101,3 +106,65 @@
   background-color: #04aa6d;
 }
 
+.upgrade {
+  display: flex;
+  box-shadow: 1px 1px 5px grey;
+  margin: 10px;
+  width: 30%;
+  flex-direction: column;
+  height: 300px;
+}
+
+.upgrade-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.upgrade-title {
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.upgrade-icon {
+  height: 70px;
+}
+
+.upgrade-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy {
+  background-color: white;
+  border-color: #04aa6d;
+  color: #04aa6d;
+  width: 100%;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid #04aa6d;
+  transition: 0.2s;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.buy:hover {
+  background-color: #04aa6d;
+  color: white;
+  transition: 0.2s;
+}
+
+.bought {
+  width: 100%;
+  background-color: #d3d3d3;
+  border: 2px solid #d3d3d3;
+  font-size: 20px;
+  color: grey;
+  margin-top: auto;
+}
+
+.des {
+  margin-top: auto;
+}

@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
-import { business } from "./static js/business.js"
+import business from "./static js/business.js"
+import incomeSetter from './static js/incomeSetter';
+import ff_upgrades from './static js/upgrades/ffupgrades';
 
 function App() {
   const [money, setMoney] = useState(localStorage.getItem("money"))
+  const ff_return = incomeSetter(0)
+
   if (money === null) {
     setMoney(0)
   }
   var i = 0
-  const move = (speed, income, id) => {
+  const move = (speed, income, id, manager) => {
+    const spd = speed;
+    const inc = income;
+    const iD = id;
+    const manage = manager;
     if (i == 0) {
       i = 1;
       var elem = document.getElementById(id);
@@ -21,12 +29,25 @@ function App() {
           setMoney(prevMoney => parseInt(prevMoney) + income)
           elem.style.width = 0 + "%"
           localStorage.setItem("money", parseInt(money) + income)
+          if (manager) {
+            move(spd, inc, iD, manage)
+          }
         } else {
           width++;
           elem.style.width = width + "%";
         }
       }
     }
+  }
+  const buy = (upgrade_name, upgrade_name2, price) => {
+    if (!upgrade_name2) {
+      localStorage.setItem(upgrade_name, true)
+    } else if (upgrade_name) {
+      localStorage.setItem(upgrade_name, true)
+      localStorage.setItem(upgrade_name2, true)
+    }
+    localStorage.setItem("money", money - price)
+    window.location.reload(false)
   }
   return (
     <div class="container">
@@ -44,21 +65,16 @@ function App() {
                   <div class="top-div">
                     <img src={index.icon} class="ind-img" />
                     <h1 class="ind-header">{index.name} - $
-                    {index.upgrade_status[0] === "true" && (index.upgrade_$[0])}
-                    {index.upgrade_status[1] === "true" && (index.upgrade_$[1])}
-                    {index.upgrade_status[2] === "true" && (index.upgrade_$[2])}
-                    {index.upgrade_status[3] === "true" && (index.upgrade_$[3])}
-                    {index.upgrade_status[4] === "true" && (index.upgrade_$[4])}
-                    {!index.upgrade_status[0] && !index.upgrade_status[1] && !index.upgrade_status[2] && !index.upgrade_status[3] && !index.upgrade_status[4] && (index.starting_income)}
+                      {ff_return}
                       /click</h1>
                   </div>
                   <div class="bottom-div">
                     <button class="click" onClick={() => {
-                      for (var j = 0; j <= index.upgrade_status.length; j++) {
-                        if (index.upgrade_status[j] === "true") {
-                          move(index.upgrade_speed[j], index.upgrade_$[j], index.name)
-                        } else {
-                          move(index.init_speed, index.starting_income, index.name)
+                      for (var j = index.speed_upgrades.length - 1; j >= 0; j--) {
+                        for (var k = index.income_upgrades.length - 1; k >= 0; k--) {
+                          if (index.speed_upgrades[j] && index.income_upgrades[k]) {
+                            move(index.upgrade_speed[j], index.upgrade_$[k], index.name, index.manager)
+                          }
                         }
                       }
                     }}>CLICK</button>
@@ -71,7 +87,28 @@ function App() {
             })}
           </div>
           <div class="upgrades">
-            fizzbuzz
+            <h1 class="header">Upgrades</h1>
+            <div class="upgrade-container">
+              {ff_upgrades.map((index) => {
+                return (
+                  <div class="upgrade">
+                    <div class="upgrade-top">
+                      <img src={index.img} class="upgrade-icon" />
+                      <h1 class="upgrade-title">{index.name}</h1>
+                    </div>
+                    <p class="des">{index.description}</p>
+                    {index.bought ? <button class="bought">Purchased</button> :
+                      <button class="buy" onClick={() => {
+                        if (money >= index.price) {
+                          buy(index.upgrade_name, index.upgrade_name2, index.price)
+                        } else {
+                          alert("You don't have enough money!")
+                        }
+                      }}>${index.price}</button>}
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
