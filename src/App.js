@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Swal from "sweetalert2"
 import './App.css';
 import business from "./static js/business.js"
 import incomeSetter from './static js/incomeSetter';
@@ -102,7 +103,10 @@ function App() {
                         if (money >= index.price) {
                           buy(index.upgrade_name, index.upgrade_name2, index.price)
                         } else {
-                          alert("You don't have enough money!")
+                          Swal.fire({
+                            icon: "error",
+                            title: "Not Enough Money",
+                          })
                         }
                       }}>${index.price}</button>}
                   </div>
