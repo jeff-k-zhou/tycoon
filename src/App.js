@@ -34,7 +34,7 @@ function App() {
         if (width >= 100) {
           clearInterval(Id);
           i = 0;
-          money = money + 1
+          money = money + income
           elem.style.width = 0 + "%"
           localStorage.setItem("money", money)
           setMoneyS(money)
