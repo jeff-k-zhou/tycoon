@@ -61,11 +61,6 @@
   border-radius: 5px;
 }
 
-.top-div {
-  display: flex;
-  align-items: center;
-}
-
 .bottom-div {
   display: flex;
   align-items: center;
@@ -112,6 +107,7 @@
   margin: 10px;
   width: 30%;
   flex-direction: column;
+  align-items: center;
   height: 300px;
 }
 
@@ -124,7 +120,6 @@
 
 .upgrade-title {
   font-weight: normal;
-  margin-left: 10px;
 }
 
 .upgrade-icon {
@@ -167,4 +162,5 @@
 
 .des {
   margin-top: auto;
+  width: 90%;
 }

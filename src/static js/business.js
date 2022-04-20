@@ -6,7 +6,7 @@ const business = [
         speed_upgrades: [true, localStorage.getItem("ff_speedUpgrade1"), localStorage.getItem("ff_speedUpgrade2")],
         upgrade_speed: [10,5,1],
         upgrade_$: [1,2,3,5,10],
-        manager: localStorage.getItem("ff_manager")
+        manager: localStorage.getItem("ff_manager"),
     },
 ]
 
