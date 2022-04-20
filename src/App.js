@@ -14,6 +14,7 @@ function App() {
   if (moneyS === null) {
     money = 0
     setMoneyS(0)
+    localStorage.setItem("money", 0)
   } else if (moneyS !== null) {
     money = localStorage.getItem("money")
     money = parseInt(money)
@@ -35,7 +36,6 @@ function App() {
           i = 0;
           money = money + 1
           elem.style.width = 0 + "%"
-          console.log(money)
           localStorage.setItem("money", money)
           setMoneyS(money)
           if (manager) {
