@@ -24,12 +24,12 @@ const ff_upgrades = [
         description: "Significantly increases fast food production speeds",
     }, 
     {
-        name: "A5",
+        name: "Prime Beef",
         price: 500,
         upgrade_name: "ff_$upgrade3",
         img: "https://firebasestorage.googleapis.com/v0/b/tycoon-e1.appspot.com/o/beef.png?alt=media&token=eb5944d3-2776-4c9b-9561-2a22b5b86751",
         bought: localStorage.getItem("ff_$upgrade3"),
-        description: "Changes beef to A5 quality beef, increasing income from $3/click to $5/click",
+        description: "Changes beef to prime beef, increasing income from $3/click to $5/click",
     }, 
     {
         name: "Skilled Chefs",
@@ -42,7 +42,7 @@ const ff_upgrades = [
     }, 
     {
         name: "Manager",
-        price: 400,
+        price: 600,
         upgrade_name: "ff_manager",
         img: "https://firebasestorage.googleapis.com/v0/b/tycoon-e1.appspot.com/o/tie.png?alt=media&token=e493d4df-0bef-48cf-80dc-c3e27a034474",
         bought: localStorage.getItem("ff_manager"),

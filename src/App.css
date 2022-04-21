@@ -8,6 +8,9 @@
 .title {
   font-weight: normal;
   font-size: 60px;
+  margin: 0;
+  margin-bottom: 20px;
+  user-select: none;
 }
 
 .game {
@@ -26,6 +29,7 @@
   font-size: 50px;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 .main {
@@ -38,6 +42,7 @@
   width: 50%;
   text-align: center;
   height: 500px;
+  overflow: auto;
 }
 
 .header {
@@ -61,6 +66,15 @@
   border-radius: 5px;
 }
 
+.selected {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #EEEEEE;
+}
+
 .bottom-div {
   display: flex;
   align-items: center;
@@ -70,11 +84,13 @@
 .ind-header {
   font-weight: normal;
   font-size: 40px;
+  user-select: none;
 }
 
 .ind-img {
   height: 70px;
   margin: 10px;
+  user-select: none;
 }
 
 .click {
@@ -163,4 +179,33 @@
 .des {
   margin-top: auto;
   width: 90%;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.ind-buy {
+  width: 80%;
+  margin-bottom: 20px;
+  height: 35px;
+  color: white;
+  background-color: red;
+  border-color: red;
 }
