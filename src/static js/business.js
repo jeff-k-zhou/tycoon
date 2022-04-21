@@ -21,6 +21,18 @@ const business = [
         price: 1000,
         bought: localStorage.getItem("sf_bought"),
         tycoon_name: "sf_bought"
+    }, 
+    {
+        name: "Bakery",
+        icon: "https://firebasestorage.googleapis.com/v0/b/tycoon-e1.appspot.com/o/cake.webp?alt=media&token=f9ee73ac-c655-4c0b-8fec-2848afe91502",
+        income_upgrades: [true, localStorage.getItem("bk_$upgrade1"), localStorage.getItem("bk_$upgrade2"),localStorage.getItem("bk_$upgrade3"),localStorage.getItem("bk_$upgrade4")],
+        speed_upgrades: [true, localStorage.getItem("bk_speedUpgrade1"), localStorage.getItem("bk_speedUpgrade2")],
+        upgrade_speed: [60,30,15],
+        upgrade_$: [20,25,50,75,150],
+        manager: localStorage.getItem("bk_manager"),
+        price: 12000,
+        bought: localStorage.getItem("bk_bought"),
+        tycoon_name: "bk_bought"
     }
 ]
 
